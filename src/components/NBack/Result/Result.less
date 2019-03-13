@@ -1,0 +1,122 @@
+
+@import '../../../static/variate.less';
+@import '../../../static/mixin/mixin.less';
+
+.n-back_result_container{
+  position: absolute;
+  top:@HeaderHeight;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color: rgb(250,247,249);
+  .result_detail{
+    position: relative;
+    margin:40/@rem 20/@rem;
+    border:2/@rem solid @borderColor;
+    border-radius: 5/@rem;
+    height:300/@rem;
+    .result_explanation{
+      position: absolute;
+      right:4/@rem;
+      top:4/@rem;
+      border:1/@rem solid @borderColor;
+      .iconfont{
+        color:@themeColor;
+        font-size:40/@rem;
+      }
+    }
+    .result_share{
+      position: absolute;
+      right:4/@rem;
+      bottom:4/@rem;
+      border:1/@rem solid @borderColor;
+      .iconfont{
+        color:@themeColor;
+        font-size:40/@rem;
+      }
+    }
+    .result_list{
+      .clearfix();
+      .result_item{
+        float:left;
+        width:280/@rem;
+        margin-left:15/@rem;
+      }
+      .result_correct{
+        .iconfont{
+          color:@themeColor;
+          font-size:120/@rem;
+        }
+        span{
+          font-size:1.5rem;
+          color:@themeColor;
+          vertical-align: 0.5rem;
+        }
+      }
+      .result_mistake{
+        position: relative;
+        .iconfont{
+          color:@themeColor;
+        }
+        .icon-eye{
+          margin-left:10/@rem;
+          font-size:90/@rem;
+        }
+        .icon-ear{
+          margin-left:10/@rem;
+          font-size:90/@rem;
+        }
+        span{
+          font-size:1rem;
+          vertical-align: 0.5rem;
+          margin-left:0.5rem;
+          color:rgb(255,210,8);
+        }
+        .eye{
+          position: absolute;
+          font-size:1rem;
+          left:1.5rem;
+          bottom:0.1rem;
+          background:white;
+          border:1px solid white;
+          border-radius: 50% 50%;
+        }
+        .ear{
+          position: absolute;
+          font-size:1rem;
+          left:1.2rem;
+          bottom:0.1rem;
+          background:white;
+          border:1px solid white;
+          border-radius: 50% 50%;
+        }
+      }
+    }
+  }
+  .play_again_container{
+    position: absolute;
+    top:380/@rem;
+    bottom:0;
+    left:0;
+    right:0;
+    .n-back_start_container{
+      top:0;
+      .n-back_train_info_container{
+        margin-top:0;
+        .train_info{
+          width:270/@rem;
+          height:270/@rem;
+          .train_level{
+            display:none;
+          }
+          .train_times{
+            display: inline;
+            position:static;
+            font-size:50/@rem;
+            line-height:270/@rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no,user-scalable=no,minimum-scale=1,maximum-scale=1"
+    />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="./reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="http://at.alicdn.com/t/font_1066941_2f3590lgnw1.css" />
+
+    <title>React App</title>
+  </head>
+  <body touchstart>
+    <div id="root"></div>
+  </body>
+  <script type="text/javascript">
+    window.onload=function(){
+      // 全局禁用默认行为
+      document.addEventListener('touchstart',function(ev){
+        ev = ev || event
+        ev.preventDefault()
+      })
+
+      // rem适配
+      const html = document.querySelector("html");
+      html.style.fontSize = document.documentElement.clientWidth/16+"px"
+    
+      ;(() => {
+        const styleNode = document.createElement("style");
+        const w = document.documentElement.clientWidth/16;
+        styleNode.innerHTML = "html{font-size:"+w+"px!important}";
+        document.head.appendChild(styleNode);
+      })()
+    }
+</script>
+</html>
