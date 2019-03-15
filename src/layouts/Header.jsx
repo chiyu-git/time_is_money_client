@@ -1,17 +1,15 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
 
 import './Header.less'
 
-class Header extends PureComponent {
-  render() {
-    return (
-      <header className='n-back_header'>
-        DUAL N-BACK N={this.props.playLevel}
-      </header>
-    );
-  }
+function Header (props){
+  return (
+    <header className='n-back_header'>
+      DUAL N-BACK N={props.playLevel}
+    </header>
+  );
 }
 
 Header.propTypes = {
