@@ -1,4 +1,5 @@
 import React, { useState,useRef,useEffect } from 'react';
+import {useInterval} from '../../../utils/hooks-utils.js'
 import PropTypes from 'prop-types';
 
 // 引入连接函数
@@ -19,6 +20,8 @@ function Play (props){
   const [visualMatchCorrect,setVisualMatchCorrect] = useState(0)
   const [visualMatchMistake,setVisualMatchMistake] = useState(0)
   const [isVisualBtnDown,setIsVisualBtnDown] = useState(0)
+  // interval state
+  const [delay,setDelay] = useState(1000)
   // DOM
   const visualBtn = useRef()
   const auralBtn = useRef()
@@ -44,34 +47,34 @@ function Play (props){
  
   // side effects
   // 逻辑聚合
+  // 3000ms
+  let randomInterval = useInterval(() => {
+    // 判断是否需要继续游戏
+    if(matchTime>4){
+      // 游戏结束，清除定时器
+      clearInterval(randomInterval)
+
+      console.log(visualMatchCorrect,visualMatchMistake);
+
+      // 调用游戏结算函数
+      const playResult = {visualMatchCorrect,visualMatchMistake}
+      const {playResultList} = props
+      playSettlement(playResultList,playResult,playLevel)
+      
+      // 跳转到result界面
+      props.history.push('/result')
+    }else{
+      // 继续游戏
+      randomActive()
+    }
+  },delay)
+
   useEffect(() => {
     // 准备时间 1000ms
     setTimeout(() => {
-      randomActive()
-      // 3000ms
-      let randomInterval = setInterval(() => {
-        
-        // 判断是否需要继续游戏
-        if(matchTime>4){
-          // 游戏结束，清除定时器
-          clearInterval(randomInterval)
-
-          console.log(visualMatchCorrect,visualMatchMistake);
-
-          // 调用游戏结算函数
-          const playResult = {visualMatchCorrect,visualMatchMistake}
-          const {playResultList} = props
-          playSettlement(playResultList,playResult,playLevel)
-          
-          // 跳转到result界面
-          props.history.push('/result')
-        }else{
-          // 继续游戏
-          randomActive()
-        }
-      },3000)
-    },1000)
-  },[]) 
+      setDelay(3000)
+    },1000) 
+  },[])
 
   //提取逻辑函数
   // 色块随机变换逻辑
@@ -84,9 +87,9 @@ function Play (props){
       _randomIndex = 8
     }
 
+    console.log(sudokuArr)
     // 控制队列的状态
     if(sudokuArr.length===playLevel){
-
       // randomEqual
       const _randomEqual = Math.round(Math.random()*2) // {0,1,2}
       if(_randomEqual===1){
@@ -118,8 +121,8 @@ function Play (props){
       // 这样是否ok呢？state 是常量，使用了 shift() 方法
       setSudokuArr(sudokuArr)
     }
-
     // 进入队列
+    console.log(sudokuArr)
     setSudokuArr([...sudokuArr,_randomIndex])
     setIsVisualBtnDown(false)
 

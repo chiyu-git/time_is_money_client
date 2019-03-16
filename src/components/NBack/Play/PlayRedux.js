@@ -32,9 +32,9 @@ function playResultList (state=[],action){
 }
 
 function playLevel (state=1,action){
-  console.log(`playLevel:${action.data}`)
   switch (action.type) {
     case UPDATE_PLAY_LEVEL:
+      console.log(`playLevel:${action.data}`)
       return action.data
     default:
       return state
