@@ -32,7 +32,7 @@ function playResultList (state=[],action){
   }
 }
 
-function playLevelArr (state=[1,1],action){
+function playLevelArr (state=[3,3],action){
   switch (action.type) {
     case UPDATE_PLAY_LEVEL:
       console.log(`playLevel:${action.data[1]}`)

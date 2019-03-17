@@ -14,7 +14,7 @@ function Result (props) {
   const {playResult} = props
   const result = playResult[playResult.length-1]
   const [prevLevel,nowLevel] = props.playLevelArr
-
+  console.log(props.playLevelArr)
   useEffect(() => {
     if(prevLevel !== nowLevel){
       setTimeout(() => {

@@ -182,7 +182,7 @@ function Play (props){
 
   // 游戏结算逻辑
   const playSettlement = (playResultList,playResult,prevPlayLevel) => {
-    let nowPlayLevel =prevPlayLevel
+    let nowPlayLevel = prevPlayLevel
     const newList = generateNewList(playResultList,playResult)
     // 根据newList 计算出正确的次数
     const totalCorrect =   newList.reduce((acc,playResult) => {
@@ -205,10 +205,9 @@ function Play (props){
     console.log(correctRate)
     if(correctRate>0.8){
       nowPlayLevel++
-      // 分发更新 playLevel 的action
-      props.updatePlayLevelArr([prevPlayLevel,nowPlayLevel])
     }
-
+    // 分发更新 playLevel 的action
+    props.updatePlayLevelArr([prevPlayLevel,nowPlayLevel])
     // 分发更新 playResultList 的action
     props.updatePlayResultList(newList)
     // 分发增加 playTime 的action
