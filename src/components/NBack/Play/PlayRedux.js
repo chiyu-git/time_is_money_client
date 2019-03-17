@@ -10,13 +10,14 @@ export const INCREASE_PLAY_TIME = 'increase_play_time' // 增加游玩次数
 /*
 action creator模块
  */
+// play
 const updatePlayResultList = (newList) => ({type:UPDATE_PLAY_RESULT,data:newList})
-
-const updatePlayLevel = (playLevel) => ({type:UPDATE_PLAY_LEVEL,data:playLevel})
-
+// play
+const updatePlayLevelArr = (playLevelArr) => ({type:UPDATE_PLAY_LEVEL,data:playLevelArr})
+// play
 const increasePlayTime = () => ({type:INCREASE_PLAY_TIME})
 
-export {updatePlayResultList,updatePlayLevel,increasePlayTime}
+export {updatePlayResultList,updatePlayLevelArr,increasePlayTime}
 
 
 /*
@@ -31,10 +32,10 @@ function playResultList (state=[],action){
   }
 }
 
-function playLevel (state=1,action){
+function playLevelArr (state=[1,1],action){
   switch (action.type) {
     case UPDATE_PLAY_LEVEL:
-      console.log(`playLevel:${action.data}`)
+      console.log(`playLevel:${action.data[1]}`)
       return action.data
     default:
       return state
@@ -53,6 +54,6 @@ function playTime(state=0,action){
 // 向外暴露一个 reducers 对象 {playResultLIST:[],playLevel:0,playTime:0;}
 export default combineReducers({
   playResultList, // Result,Play
-  playLevel, // Header,Start
+  playLevelArr, // Header,Start
   playTime, // Start
 })

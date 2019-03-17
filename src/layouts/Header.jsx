@@ -7,18 +7,18 @@ import './Header.less'
 function Header (props){
   return (
     <header className='n-back_header'>
-      DUAL N-BACK N={props.playLevel}
+      DUAL N-BACK N={props.playLevelArr[1]}
     </header>
   );
 }
 
 Header.propTypes = {
-  playLevel:PropTypes.number.isRequired
+  playLevelArr:PropTypes.array.isRequired
 };
 
 export default connect(
   (state)=>({
-    playLevel:state.playInfo.playLevel,
+    playLevelArr:state.playInfo.playLevelArr,
   }),
   {}
 )(Header)

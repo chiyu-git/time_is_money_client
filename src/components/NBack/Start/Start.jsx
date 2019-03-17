@@ -15,10 +15,10 @@ function Start (props){
 
   return (
     <section className='n-back_start_container'>
-      <div className='n-back_train_info_container'>
-        <div className="train_info">
-          <span className='train_level'>N={props.playLevel}</span>
-          <span className='train_times'>{`${props.playTime}/20`}</span>
+      <div className='n-back_play_info_container'>
+        <div className="play_info">
+          <span className='play_level'>N={props.playLevelArr[1]}</span>
+          <span className='play_times'>{`${props.playTime}/20`}</span>
         </div>
       </div>
       <div className='n-back_play_btn' onTouchStart={handleTouch} ref={playBtn}>
@@ -31,13 +31,13 @@ function Start (props){
 
 Start.propTypes = {
   playTime:PropTypes.number.isRequired,
-  playLevel:PropTypes.number.isRequired,
+  playLevelArr:PropTypes.array.isRequired,
 };
 
 export default connect(
   (state)=>({
     playTime:state.playInfo.playTime,
-    playLevel:state.playInfo.playLevel,
+    playLevelArr:state.playInfo.playLevelArr,
   }),
   {}
 )(Start)

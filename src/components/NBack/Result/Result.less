@@ -4,11 +4,44 @@
 
 .n-back_result_container{
   position: absolute;
-  top:@HeaderHeight;
+  top:@HeaderHeight; // 自适应填满屏幕，所以开启了绝对定位
   bottom:0;
   left:0;
   right:0;
   background-color: rgb(250,247,249);
+  .result_masking{
+    position: absolute;
+    top:-@HeaderHeight;left:0;right:0;bottom:0;
+    z-index: 1;
+    background:white;
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+    transition: opacity 1s ease,bottom 0.5s ease;
+    div{
+      color:@themeColor;
+      font-size:70/@rem;
+      // transition:transform 4s ease;
+      // transform:translateY(-520/@rem);
+       animation:enterAnime 1.5s  ease forwards;
+    }
+    @keyframes enterAnime{
+      0%{
+        transform:scaleX(1);
+      }
+      25%{
+        transform:scaleX(1.5);
+      }
+      50%{
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100%{
+        transform: translateY(-250px);
+        opacity: 0;
+      }
+    }
+  }
   .result_detail{
     position: relative;
     margin:40/@rem 20/@rem;
@@ -94,22 +127,23 @@
     }
   }
   .play_again_container{
-    position: absolute;
-    top:380/@rem;
+    position: relative;
+    top:0;
     bottom:0;
     left:0;
     right:0;
+    height:660/@rem;
     .n-back_start_container{
       top:0;
-      .n-back_train_info_container{
+      .n-back_play_info_container{
         margin-top:0;
-        .train_info{
+        .play_info{
           width:270/@rem;
           height:270/@rem;
-          .train_level{
+          .play_level{
             display:none;
           }
-          .train_times{
+          .play_times{
             display: inline;
             position:static;
             font-size:50/@rem;
