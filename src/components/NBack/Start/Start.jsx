@@ -11,6 +11,7 @@ function Start (props){
 
   const handleTouch = (ev) =>{
     playBtn.current.classList.add('active')
+    props.history.push('/play')
   } 
 
   return (

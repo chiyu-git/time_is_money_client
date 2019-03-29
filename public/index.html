@@ -9,7 +9,7 @@
     />
 
     <link rel="stylesheet" type="text/css" media="screen" href="./reset.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="http://at.alicdn.com/t/font_1066941_2f3590lgnw1.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="//at.alicdn.com/t/font_1066941_2f3590lgnw1.css" />
 
     <title>React App</title>
   </head>
@@ -22,7 +22,7 @@
       document.addEventListener('touchstart',function(ev){
         ev = ev || event
         ev.preventDefault()
-      })
+      },{passive:false})
 
       // rem适配
       const html = document.querySelector("html");
