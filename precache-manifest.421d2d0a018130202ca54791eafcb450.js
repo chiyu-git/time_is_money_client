@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/time_is_money_client/static/js/2.ec3c351d.chunk.js"
   },
   {
-    "revision": "be66978ccf52f8b6763df1ca28a9c742",
+    "revision": "be08c6f08785b652b851dd5317e34253",
     "url": "/time_is_money_client/index.html"
   }
 ];
