@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // 引入连接函数
 import {connect} from 'react-redux'
 // 引入action函数
-import {updatePlayResultList,updatePlayLevelArr,increasePlayTime} from './PlayRedux'
+import {updatePlayResultList,updatePlayLevelArr,updatePlayTime} from './PlayRedux'
 
 import './Play.less'
 import clickSrc from './audio/click.mp3'
@@ -97,9 +97,9 @@ function Play (props){
         auralMatchMiss:MAX_MATCH-aural.matchCorrect,
       }
       // 获取之前的playResultList
-      const {playResultList} = props
+      const {playResultList,playTime} = props
       const prevPlayLevel = playLevel
-      playSettlement(playResultList,playResult,prevPlayLevel)
+      playSettlement(playResultList,playResult,prevPlayLevel,playTime)
       
       // 跳转到result界面
       props.history.push('/result')
@@ -181,7 +181,7 @@ function Play (props){
   }
 
   // 游戏结算逻辑
-  const playSettlement = (playResultList,playResult,prevPlayLevel) => {
+  const playSettlement = (playResultList,playResult,prevPlayLevel,playTime) => {
     let nowPlayLevel = prevPlayLevel
     const newList = generateNewList(playResultList,playResult)
     // 根据newList 计算出正确的次数
@@ -211,7 +211,7 @@ function Play (props){
     // 分发更新 playResultList 的action
     props.updatePlayResultList(newList)
     // 分发增加 playTime 的action
-    props.increasePlayTime()
+    props.updatePlayTime(playTime+1)
 
     // 定义一个函数，专门用于产生newList
     function generateNewList(playResultList,playResult){
@@ -259,9 +259,10 @@ Play.propTypes = {
   // state
   playResultList: PropTypes.array.isRequired,
   playLevelArr: PropTypes.array.isRequired,
+  playTime: PropTypes.number.isRequired,
   // action
   updatePlayResultList: PropTypes.func.isRequired,
-  increasePlayTime: PropTypes.func.isRequired,
+  updatePlayTime: PropTypes.func.isRequired,
   updatePlayLevelArr: PropTypes.func.isRequired,
 };
 
@@ -269,10 +270,11 @@ export default connect(
   state => ({
     playResultList: state.playInfo.playResultList,
     playLevelArr: state.playInfo.playLevelArr,
+    playTime:state.playInfo.playTime
   }), //自动结构变成play的属性
   {
     updatePlayResultList,
-    increasePlayTime,
+    updatePlayTime,
     updatePlayLevelArr,
   }  //自动结构变成play的方法
 )(Play)

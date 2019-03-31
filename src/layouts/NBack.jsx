@@ -11,6 +11,7 @@ import Result from '../components/NBack/Result/Result'
 
 function NBack (){
 
+
   return (
     <div className='n-back_container'>
       <Header></Header>
