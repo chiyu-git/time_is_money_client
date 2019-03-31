@@ -77,7 +77,7 @@ function Result (props) {
         </ul>
       </div>
       <div className="play_again_container">
-        <Start></Start>
+        <Start history={props.history}></Start>
       </div>
     </section>
   );

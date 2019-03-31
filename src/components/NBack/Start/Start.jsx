@@ -12,6 +12,7 @@ function Start (props){
 
   const handleTouch = (ev) =>{
     playBtn.current.classList.add('active')
+    props.history.push('play')
   } 
 
   // 读取并设置本地游戏数据，用于显示，playLevel 和 playTime
