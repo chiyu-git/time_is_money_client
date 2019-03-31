@@ -1,7 +1,7 @@
 import React, { useRef , useEffect} from 'react';
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
-import {NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 import {updatePlayLevelArr,updatePlayResultList,updatePlayTime} from '../Play/PlayRedux'
 
@@ -12,7 +12,6 @@ function Start (props){
 
   const handleTouch = (ev) =>{
     playBtn.current.classList.add('active')
-    props.history.push('/play')
   } 
 
     // 读取并设置本地游戏数据，用于显示，playLevel 和 playTime
@@ -25,7 +24,6 @@ function Start (props){
         props.updatePlayResultList(playResultList)
         props.updatePlayLevelArr(playLevel)
         props.updatePlayTime(playTime)
-        console.log(playTime)
       }
     },[])
 
@@ -38,7 +36,7 @@ function Start (props){
         </div>
       </div>
       <div className='n-back_play_btn' onTouchStart={handleTouch} ref={playBtn}>
-        <NavLink to='/play'><i className='iconfont icon-play'></i></NavLink>
+        <Link to='/play'><i className='iconfont icon-play'></i></Link>
       </div>
     </section>
   )
