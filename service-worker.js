@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/time_is_money_client/precache-manifest.f997c6ca76870ab55a7b21e5ae6a612a.js"
+  "/time_is_money_client/precache-manifest.207db0e4d4a253213b71e18b0b86137e.js"
 );
 
 workbox.clientsClaim();
