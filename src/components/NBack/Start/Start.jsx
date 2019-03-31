@@ -14,18 +14,18 @@ function Start (props){
     playBtn.current.classList.add('active')
   } 
 
-    // 读取并设置本地游戏数据，用于显示，playLevel 和 playTime
-    useEffect(() => {
-      // 读取到的是字符串null？
-      if(localStorage.getItem('playLevelArr')!=='null'){
-        const playResultList = JSON.parse(localStorage.getItem('playResultList'))
-        const playLevel = JSON.parse(localStorage.getItem('playLevelArr'))
-        const playTime = JSON.parse(localStorage.getItem('playTime'))
-        props.updatePlayResultList(playResultList)
-        props.updatePlayLevelArr(playLevel)
-        props.updatePlayTime(playTime)
-      }
-    },[])
+  // 读取并设置本地游戏数据，用于显示，playLevel 和 playTime
+  useEffect(() => {
+    // 读取到的是字符串null？
+    if(localStorage.getItem('playLevelArr')!=='null'){
+      const playResultList = JSON.parse(localStorage.getItem('playResultList'))
+      const playLevel = JSON.parse(localStorage.getItem('playLevelArr'))
+      const playTime = JSON.parse(localStorage.getItem('playTime'))
+      props.updatePlayResultList(playResultList)
+      props.updatePlayLevelArr(playLevel)
+      props.updatePlayTime(playTime)
+    }
+  },[])
 
   return (
     <section className='n-back_start_container'>
