@@ -16,15 +16,15 @@ self.__precacheManifest = [
     "url": "/time_is_money_client/static/js/runtime~main.1d204bee.js"
   },
   {
-    "revision": "a8edf7eed347327ec418",
-    "url": "/time_is_money_client/static/js/main.a8edf7ee.chunk.js"
+    "revision": "41c4c968f8a57d79cc7a",
+    "url": "/time_is_money_client/static/js/main.41c4c968.chunk.js"
   },
   {
-    "revision": "908b9b10d8193fca14eb",
-    "url": "/time_is_money_client/static/js/2.908b9b10.chunk.js"
+    "revision": "e9c09d4faa84ff42ef43",
+    "url": "/time_is_money_client/static/js/2.e9c09d4f.chunk.js"
   },
   {
-    "revision": "dfe89f485a5bf934f69ef50a25c5a169",
+    "revision": "c3ee7c4613d08f9722c2b11fb2ee090e",
     "url": "/time_is_money_client/index.html"
   }
 ];
