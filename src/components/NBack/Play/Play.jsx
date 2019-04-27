@@ -218,7 +218,8 @@ function Play (props){
       if(playResultList.length<MAX_MATCH){
         return [...playResultList,playResult]
       }else{
-        return [...playResultList.shift(),playResult]
+        playResultList.shift()
+        return [...playResultList,playResult]
       }
     }
     

@@ -1,9 +1,10 @@
-import React,{useRef,useEffect} from 'react';
+import React,{useRef,useEffect,useState} from 'react';
 import PropTypes from 'prop-types';
 // 引入连接函数
 import {connect} from 'react-redux'
 
 import Start from '../Start/Start'
+import Help from '../Help/Help'
 
 import './Result.less'
 import dingSrc from './audio/ding.mp3'
@@ -11,10 +12,17 @@ import dingSrc from './audio/ding.mp3'
 function Result (props) {
   const levelDom = useRef(null)
   const dingAudio = useRef(null)
-  const {playResult} = props
-  const result = playResult[playResult.length-1]
+  const [show,setShow] = useState(false)
+
+  const {playResultList} = props
+  const result = playResultList[playResultList.length-1]
   const [prevLevel,nowLevel] = props.playLevelArr
   console.log(props.playLevelArr)
+
+  const showHelp = function(){
+    setShow(true)
+  }
+
   useEffect(() => {
     if(prevLevel !== nowLevel){
       setTimeout(() => {
@@ -42,10 +50,11 @@ function Result (props) {
         <div className='level' ref={levelDom} >N={prevLevel}</div>
         <audio src={dingSrc} ref = {dingAudio} preload='auto'></audio>
       </div>
+      
       <div className="result_detail">
-        <span className="result_explanation"><i className='iconfont icon-query'></i></span>
+        <span className="result_explanation"><i className='iconfont icon-query' onTouchStart={showHelp}></i></span>
         <span className="result_share"><i className='iconfont icon-share'></i></span>
-        <ul className="result_list">
+        {/* <ul className="result_list">
           <li className="result_item result_correct">
             <i className='iconfont icon-eye'></i>
             <span>{result.visualMatchCorrect}</span>
@@ -74,24 +83,25 @@ function Result (props) {
             <span>{result.auralMatchMistake}</span>
             <i className='iconfont icon-plus ear'></i>
           </li>
-        </ul>
+        </ul>  */}
       </div>
       <div className="play_again_container">
         <Start history={props.history}></Start>
       </div>
+      {show?<Help setShow={setShow} ></Help>:null}
     </section>
   );
 }
 
 Result.propTypes = {
-  playResult: PropTypes.array.isRequired,
+  playResultList: PropTypes.array.isRequired,
   playLevelArr:PropTypes.array.isRequired,
 };
 
 
 export default connect(
   state => ({
-    playResult: state.playInfo.playResultList,
+    playResultList: state.playInfo.playResultList,
     playLevelArr:state.playInfo.playLevelArr,
   }), //自动解构变成play的属性
   {}  //自动结构变成play的方法

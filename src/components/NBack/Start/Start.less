@@ -7,8 +7,15 @@
   left:0;
   right:0;
   background-color: rgb(250,247,249);
-  .n-back_play_info_container{
+  .play_info_container{
     margin-top:100/@rem;
+    .play_rule{
+      position: absolute;
+      top:30/@rem; // (100-40)/2
+      right: 30/@rem;
+      color:@themeColor;
+      font-size:40/@rem;
+    }
     .play_info{
       position: relative;
       width:320/@rem;
@@ -31,7 +38,7 @@
       }
     }
   }
-  .n-back_play_btn{
+  .play_btn{
     position: absolute;
     left:0;right:0;
     bottom:100/@rem;

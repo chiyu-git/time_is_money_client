@@ -1,0 +1,59 @@
+.n-back_start_container {
+  position: absolute;
+  top: 2.5rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #faf7f9;
+}
+.n-back_start_container .play_info_container {
+  margin-top: 2.5rem;
+}
+.n-back_start_container .play_info_container .play_rule {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  color: #19B4A2;
+  font-size: 1rem;
+}
+.n-back_start_container .play_info_container .play_info {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  margin: 0 auto;
+  border: 0.5rem solid rgba(100, 100, 100, 0.15);
+  border-radius: 50% 50% 50% 50%;
+  text-align: center;
+}
+.n-back_start_container .play_info_container .play_info .play_level {
+  font-size: 1.75rem;
+  color: #19B4A2;
+  line-height: 8rem;
+}
+.n-back_start_container .play_info_container .play_info .play_times {
+  display: block;
+  position: relative;
+  top: -2.5rem;
+  font-size: 1rem;
+  color: rgba(100, 100, 100, 0.5);
+}
+.n-back_start_container .play_btn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2.5rem;
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto;
+  border: 0.125rem solid rgba(100, 100, 100, 0.15);
+  border-radius: 50% 50% 50% 50%;
+  text-align: center;
+  line-height: 4rem;
+}
+.n-back_start_container .play_btn i {
+  font-size: 3rem;
+  color: #19B4A2;
+}
+.n-back_start_container .active {
+  background-color: rgba(100, 100, 100, 0.15);
+}

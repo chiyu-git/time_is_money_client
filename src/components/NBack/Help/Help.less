@@ -1,0 +1,50 @@
+@import '../../../static/variate.less';
+
+.n-back_help_container{
+  position:absolute;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
+  .help_masking{
+    width:100%;
+    height: 100%;
+    background-color: rgba(100, 100, 100, 0.3);
+  }
+  .help_info_container{
+    position: absolute;
+    top:0;left:0;bottom: 0;right: 0;
+    margin:auto;
+    width:600/@rem;
+    height:530/@rem;
+    border-radius:30/@rem;
+    overflow:hidden;
+    .help_header{
+      width: 100%;
+      height:100/@rem;
+      line-height:100/@rem;
+      text-align:center;
+      font-size:@H1FontSize;
+      color:white;
+      background:@themeColor;
+      i{
+        position: absolute;
+        top: 0;right: 20/@rem;
+        font-size:@H1FontSize;
+      }
+    }
+    .help_info{
+      height: 430/@rem;
+      width:100%;
+      background:white;
+      color:@themeColor;
+      p{
+        position: absolute;
+        margin: 10/@rem 10/@rem;
+      }
+    }
+  }
+}
+.hide{
+  display:none;
+}
