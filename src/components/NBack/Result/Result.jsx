@@ -98,6 +98,17 @@ Result.propTypes = {
   playLevelArr:PropTypes.array.isRequired,
 };
 
+/* Result.defaultProps = {
+  playResultList:[{
+    visualMatchCorrect:0,
+    visualMatchMistake:0,
+    visualMatchMiss:0,
+    auralMatchCorrect:0,
+    auralMatchMistake:0,
+    auralMatchMiss:0,
+  }]
+} */
+
 
 export default connect(
   state => ({
