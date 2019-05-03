@@ -1,0 +1,47 @@
+.n-back_explain_container:before,
+.n-back_explain_container:after {
+  content: " ";
+  display: table;
+}
+.n-back_explain_container:after {
+  clear: both;
+}
+.n-back_explain_container .explain_label {
+  margin: 0.25rem 0.25rem;
+  font-size: 1.25rem;
+}
+.n-back_explain_container .explain {
+  position: relative;
+  text-align: center;
+}
+.n-back_explain_container .explain .iconfont {
+  font-size: 3rem;
+}
+.n-back_explain_container .explain .eye {
+  position: absolute;
+  left: 3.5rem;
+  top: 1.5rem;
+  font-size: 1.3rem;
+  background: white;
+  border: 1px solid white;
+  border-radius: 50% 50%;
+}
+.n-back_explain_container .explain .ear {
+  position: absolute;
+  left: 6.3rem;
+  top: 1.5rem;
+  font-size: 1.3rem;
+  background: white;
+  border: 1px solid white;
+  border-radius: 50% 50%;
+}
+.n-back_explain_container .explain .explain_text {
+  font-size: 0.75rem;
+  vertical-align: 1rem;
+}
+.n-back_explain_container .explain .explain_text .miss {
+  color: #ffd208;
+}
+.n-back_explain_container .explain .explain_text .mistake {
+  color: red;
+}

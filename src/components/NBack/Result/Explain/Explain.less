@@ -1,0 +1,43 @@
+
+@import '../../../../static/variate.less';
+@import '../../../../static/mixin/mixin.less';
+.n-back_explain_container{
+  .clearfix();
+  .explain_label{
+    margin: 10/@rem 10/@rem;
+    font-size:50/@rem;
+  }
+  .explain{
+    position: relative;
+    text-align:center;
+    .iconfont{
+      font-size:120/@rem;
+    }
+    .eye{
+      position: absolute;
+      left:3.5rem;top:1.5rem;
+      font-size:1.3rem;
+      background:white;
+      border:1px solid white;
+      border-radius: 50% 50%;
+    }
+    .ear{
+      position: absolute;
+      left:6.3rem;top:1.5rem;
+      font-size:1.3rem;
+      background:white;
+      border:1px solid white;
+      border-radius: 50% 50%;
+    }
+    .explain_text{
+      font-size:30/@rem;
+      vertical-align:1rem;
+      .miss{
+        color:@localeColor;
+      }
+      .mistake{
+        color:red;
+      }
+    }
+  }
+}

@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom'
 import Help from '../Help/Help'
+import Rule from './Rule/Rule'
 
 import {updatePlayLevelArr,updatePlayResultList,updatePlayTime} from '../Play/PlayRedux'
 
@@ -44,7 +45,7 @@ function Start (props){
       <div className='play_btn' onTouchStart={handleTouch} ref={playBtn}>
         <Link to='/play'><i className='iconfont icon-play'></i></Link>
       </div>
-      {show?<Help setShow={setShow} ></Help>:null}
+      {show?<Help setShow={setShow} info={<Rule/>} title={'HELP'}></Help>:null}
     </section>
   )
 

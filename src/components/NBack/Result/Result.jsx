@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 
 import Start from '../Start/Start'
 import Help from '../Help/Help'
+import Explain from './Explain/Explain'
 
 import './Result.less'
 import dingSrc from './audio/ding.mp3'
@@ -15,7 +16,8 @@ function Result (props) {
   const [show,setShow] = useState(false)
 
   const {playResultList} = props
-  const result = playResultList[playResultList.length-1]
+  let result = playResultList[playResultList.length-1]
+  if(result === undefined) result =defaultProps
   const [prevLevel,nowLevel] = props.playLevelArr
   console.log(props.playLevelArr)
 
@@ -88,7 +90,7 @@ function Result (props) {
       <div className="play_again_container">
         <Start history={props.history}></Start>
       </div>
-      {show?<Help setShow={setShow} ></Help>:null}
+      {show?<Help setShow={setShow} info={<Explain/>} title={'EXPLAIN'}></Help>:null}
     </section>
   );
 }
@@ -98,16 +100,14 @@ Result.propTypes = {
   playLevelArr:PropTypes.array.isRequired,
 };
 
-/* Result.defaultProps = {
-  playResultList:[{
-    visualMatchCorrect:0,
-    visualMatchMistake:0,
-    visualMatchMiss:0,
-    auralMatchCorrect:0,
-    auralMatchMistake:0,
-    auralMatchMiss:0,
-  }]
-} */
+let defaultProps = {
+  visualMatchCorrect:0,
+  visualMatchMistake:0,
+  visualMatchMiss:0,
+  auralMatchCorrect:0,
+  auralMatchMistake:0,
+  auralMatchMiss:0,
+}
 
 
 export default connect(
