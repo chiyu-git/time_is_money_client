@@ -54,7 +54,7 @@ function Result (props) {
       <div className="result_detail">
         <span className="result_explanation"><i className='iconfont icon-query' onTouchStart={showHelp}></i></span>
         <span className="result_share"><i className='iconfont icon-share'></i></span>
-        {/* <ul className="result_list">
+        <ul className="result_list">
           <li className="result_item result_correct">
             <i className='iconfont icon-eye'></i>
             <span>{result.visualMatchCorrect}</span>
@@ -83,7 +83,7 @@ function Result (props) {
             <span>{result.auralMatchMistake}</span>
             <i className='iconfont icon-plus ear'></i>
           </li>
-        </ul>  */}
+        </ul>
       </div>
       <div className="play_again_container">
         <Start history={props.history}></Start>

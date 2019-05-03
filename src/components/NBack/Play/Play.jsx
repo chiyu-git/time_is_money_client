@@ -80,7 +80,7 @@ function Play (props){
       setDelay(3000)
     },1000) 
   },[])
-  // 3000ms
+  // 1000ms→3000ms
   let randomInterval = useInterval(() => {
     // 判断是否需要继续游戏
      if( visual.matchTime>MAX_MATCH-1 && aural.matchTime>MAX_MATCH-1){
@@ -109,7 +109,7 @@ function Play (props){
     }
   },delay)
 
-  //提取逻辑函数
+  // 提取逻辑函数
   // 色块随机变换逻辑
   const randomActive = () => {
 
