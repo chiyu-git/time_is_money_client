@@ -4,13 +4,13 @@ import {Provider} from 'react-redux'
 
 import './index.less';
 
-import NBack from './layouts/NBack'
+import Frame from './layouts/Frame'
 import store from './redux/store'
 
 ReactDOM.render(
 (
 <Provider store={store}>
-    <NBack/>
+    <Frame/>
 </Provider>
 ), 
 document.getElementById('root'));

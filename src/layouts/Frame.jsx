@@ -2,18 +2,18 @@ import React,{}from 'react';
 // import PropTypes from 'prop-types';
 import { Switch, Route,Redirect,HashRouter} from 'react-router-dom'
 
-import './NBack.less'
+import './Frame.less'
 
 import Header from './Header'
 import Start from '../components/NBack/Start/Start';
 import Play from '../components/NBack/Play/Play'
 import Result from '../components/NBack/Result/Result'
 
-function NBack (){
+function Frame (){
 
 
   return (
-    <div className='n-back_container'>
+    <div className='frame_container'>
       <Header></Header>
       <HashRouter>
         <Switch>
@@ -27,8 +27,8 @@ function NBack (){
   );
 }
 
-NBack.propTypes = {
+Frame.propTypes = {
 
 };
 
-export default NBack
+export default Frame

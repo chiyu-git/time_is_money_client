@@ -6,7 +6,7 @@ import './Header.less'
 
 function Header (props){
   return (
-    <header className='n-back_header'>
+    <header className='header'>
       DUAL N-BACK N={props.playLevelArr[1]}
     </header>
   );
